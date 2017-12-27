@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import './App.css';
+import {Provider} from 'react-redux';
+import configureStore from './configureStore';
+import AsyncApp from './containers/AsyncApp';
 
-class App extends Component {
+// TODO: why outside class?
+const store = configureStore();
+
+export default class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1 className="App-title">Welcome to React</h1>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Provider store={store}>
+        <AsyncApp />
+      </Provider>
     );
   }
 }
-
-export default App;
