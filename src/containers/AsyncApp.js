@@ -11,7 +11,6 @@ import Posts from '../components/Posts';
 
 class AsyncApp extends React.Component {
   componentDidMount = () => {
-    // TODO: selectED?
     const {dispatch, selectedSubreddit} = this.props;
     dispatch( fetchPostsIfNeeded( selectedSubreddit));
   };
